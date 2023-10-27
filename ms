@@ -1,11 +1,24 @@
-ms/__init__.py
-@@ -0,0 +1,9 @@
-from flask import Flask
-import joblib
+ 
+ms/functions.py
+@@ -0,0 +1,21 @@
+import pandas as pd
+from ms import model
 
 
-# Initialize App
-app = Flask(__name__)
+def predict(X, model):
+    prediction = model.predict(X)[0]
+    return prediction
 
-# Load models
-model = joblib.load('model/model_binary.dat.gz')
+
+def get_model_response(json_data):
+    X = pd.DataFrame.from_dict(json_data)
+    prediction = predict(X, model)
+    if prediction == 1:
+        label = "M"
+    else:
+        label = "B"
+    return {
+        'status': 200,
+        'label': label,
+        'prediction': int(prediction)
+    }
