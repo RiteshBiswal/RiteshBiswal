@@ -1,4 +1,4 @@
-### RiteshBiswalW11-GradedAssignment 👋
+### 👋 RiteshBiswalW11-GradedAssignment 👋
 
 <!--
 **RiteshBiswal/RiteshBiswal** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
